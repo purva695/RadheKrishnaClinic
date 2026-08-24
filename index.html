@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Professional Orthopedic and Dermatology clinic providing trusted medical care.">
+          content="Orthoderm Speciality Centre - Orthopedics and Dermatology speciality care in Chennai.">
 
-    <meta name="keywords"
-          content="orthopedic clinic, dermatology clinic, skin doctor, orthopedic doctor, knee pain, acne">
+    <title>Radhe Krishna Speciality Centre | Orthopedics & Dermatology</title>
 
-    <title>OrthoDerma Clinic | Orthopedics & Dermatology</title>
-
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-          rel="stylesheet">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,19 +32,26 @@
 
 <!-- ================= TOP BAR ================= -->
 
-<div class="topbar">
-    <div class="container topbar-content">
+<div class="top-bar">
+    <div class="container top-content">
 
-        <div>
-            <i class="fa-solid fa-location-dot"></i>
-            Your Clinic Address, Your City
+        <div class="top-left">
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                +91 96000 55372
+            </span>
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                orthodermcentre@gmail.com
+            </span>
         </div>
 
-        <div>
-            <i class="fa-solid fa-phone"></i>
-            <a href="tel:+919999999999">
-                +91 99999 99999
-            </a>
+        <div class="top-right">
+            <span>
+                <i class="fa-regular fa-clock"></i>
+                Mon - Sat: 10 AM - 9 PM
+            </span>
         </div>
 
     </div>
@@ -51,136 +60,47 @@
 
 <!-- ================= NAVBAR ================= -->
 
-<header class="header">
+<header class="navbar">
 
     <div class="container nav-container">
 
         <a href="#home" class="logo">
+            <a href="#home" class="logo">
+                <img src="images/logo.png" alt="Aarogyam Speciality Hospital Logo">
+            </a>
 
-            <div class="logo-icon">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-
-            <div>
-                <strong>Ortho<span>Derma</span></strong>
-                <small>CLINIC</small>
-            </div>
-
+            <span>
+                <strong>Radhe</strong><em>Krishna</em>
+                <small>Speciality Centre</small>
+            </span>
         </a>
 
+        <nav class="nav-menu" id="navMenu">
 
-        <nav class="navbar" id="navbar">
+            <a href="#home" class="active">Home</a>
 
-            <a href="#home" class="nav-link active">
-                Home
-            </a>
+            <a href="#about">About Us</a>
 
-            <div class="dropdown">
+            <a href="#doctors">Doctors</a>
 
-                <a href="#about" class="nav-link dropdown-toggle">
-                    About
-                    <i class="fa-solid fa-chevron-down"></i>
-                </a>
+            <a href="#orthopedics">Orthopedics</a>
 
-                <div class="dropdown-menu">
+            <a href="#dermatology">Dermatology</a>
 
-                    <a href="#about">
-                        About Clinic
-                    </a>
+            <a href="#blogs">Blogs</a>
 
-                    <a href="#doctors">
-                        Our Doctors
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="dropdown">
-
-                <a href="#orthopedics" class="nav-link dropdown-toggle">
-                    Orthopedics
-                    <i class="fa-solid fa-chevron-down"></i>
-                </a>
-
-                <div class="dropdown-menu">
-
-                    <a href="#orthopedics">
-                        Joint Replacement
-                    </a>
-
-                    <a href="#conditions">
-                        Knee Problems
-                    </a>
-
-                    <a href="#conditions">
-                        Back Pain
-                    </a>
-
-                    <a href="#conditions">
-                        Sports Injuries
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="dropdown">
-
-                <a href="#dermatology" class="nav-link dropdown-toggle">
-                    Dermatology
-                    <i class="fa-solid fa-chevron-down"></i>
-                </a>
-
-                <div class="dropdown-menu">
-
-                    <a href="#dermatology">
-                        Acne Treatment
-                    </a>
-
-                    <a href="#dermatology">
-                        Hair Loss
-                    </a>
-
-                    <a href="#dermatology">
-                        Skin Allergies
-                    </a>
-
-                    <a href="#dermatology">
-                        Pigmentation
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <a href="#articles" class="nav-link">
-                Health Tips
-            </a>
-
-            <a href="#contact" class="nav-link">
-                Contact
-            </a>
+            <a href="#contact">Contact</a>
 
         </nav>
 
 
-        <a href="#appointment" class="btn btn-primary nav-btn">
+        <a href="#appointment" class="nav-btn">
             Book Appointment
         </a>
 
 
-        <button class="mobile-menu"
-                id="mobileMenu"
-                aria-label="Open Menu">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
         </button>
 
     </div>
@@ -188,242 +108,188 @@
 </header>
 
 
+
 <!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <div class="hero-slider">
+    <div class="container hero-grid">
 
-        <div class="hero-slide active"
-             style="background-image:url('images/hero-1.jpg')">
+        <div class="hero-content">
 
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content">
-
-                <span class="eyebrow">
-                    CLEAR DIAGNOSIS • HONEST TREATMENT • FOCUSED CARE
-                </span>
-
-                <h1>
-                    Orthopedics & Dermatology
-                    <br>
-                    Care You Can Trust
-                </h1>
-
-                <p>
-                    Complete medical care for bones, joints,
-                    skin, hair and nails under one roof.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#appointment"
-                       class="btn btn-primary">
-                        Book Appointment
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                    <a href="#about"
-                       class="btn btn-outline-white">
-                        Explore Clinic
-                    </a>
-
-                </div>
-
+            <div class="hero-tag">
+                <i class="fa-solid fa-heart-pulse"></i>
+                Orthopedics & Dermatology
             </div>
 
-        </div>
-
-
-        <div class="hero-slide"
-             style="background-image:url('images/hero-2.jpg')">
-
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content">
-
-                <span class="eyebrow">
-                    PERSONALIZED MEDICAL CARE
-                </span>
-
-                <h1>
-                    Better Diagnosis.
-                    <br>
-                    Better Treatment.
-                </h1>
-
-                <p>
-                    Get clear guidance and personalized
-                    treatment from experienced specialists.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#appointment"
-                       class="btn btn-primary">
-                        Consult a Doctor
-                    </a>
-
-                    <a href="#doctors"
-                       class="btn btn-outline-white">
-                        Meet Our Doctors
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="slider-controls">
-
-        <button id="prevSlide">
-            <i class="fa-solid fa-arrow-left"></i>
-        </button>
-
-        <div class="slider-dots" id="sliderDots"></div>
-
-        <button id="nextSlide">
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SPECIALTIES ================= -->
-
-<section class="section specialties">
-
-    <div class="container">
-
-        <div class="section-heading center">
-
-            <span class="section-label">
-                OUR SPECIALTIES
-            </span>
-
-            <h2>
-                Specialized Medical Care
-            </h2>
+            <h1>
+                Expert Care for
+                <span>Bone, Joint, Skin & Hair</span>
+            </h1>
 
             <p>
-                Choose the department that best matches
-                your health concern.
+                Radhe Krishna Speciality Centre brings orthopedic and
+                dermatology expertise together to provide
+                comprehensive, patient-focused healthcare.
             </p>
+
+            <div class="hero-buttons">
+
+                <a href="#appointment" class="btn btn-primary">
+                    Book Appointment
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#about" class="btn btn-outline">
+                    Explore Our Centre
+                </a>
+
+            </div>
+
+
+            <div class="hero-trust">
+
+                <div class="trust-item">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <div>
+                        <strong>Specialist</strong>
+                        <span>Doctors</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <i class="fa-solid fa-hospital"></i>
+                    <div>
+                        <strong>Advanced</strong>
+                        <span>Care</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <div>
+                        <strong>Patient</strong>
+                        <span>Focused</span>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
 
-        <div class="specialty-grid">
+        <div class="hero-image">
 
+            <!-- Replace this with actual Orthoderm image -->
 
-            <article class="specialty-card">
+            <img
+                src="images/hero-doctor.jpg"
+                alt="Orthoderm Speciality Centre"
+            >
 
-                <div class="specialty-image">
+            <div class="hero-card">
 
-                    <img src="images/orthopedic.jpg"
-                         alt="Orthopedic care">
-
+                <div class="hero-card-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
                 </div>
 
-                <div class="specialty-content">
-
-                    <div class="icon-box">
-                        <i class="fa-solid fa-bone"></i>
-                    </div>
-
-                    <h3>
-                        Orthopedics
-                    </h3>
-
-                    <p>
-                        Care for bones, joints, muscles,
-                        sports injuries and movement problems.
-                    </p>
-
-                    <a href="#orthopedics"
-                       class="text-link">
-
-                        View Treatments
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
+                <div>
+                    <strong>Specialist Care</strong>
+                    <span>Under One Roof</span>
                 </div>
 
-            </article>
-
-
-            <article class="specialty-card">
-
-                <div class="specialty-image">
-
-                    <img src="images/dermatology.jpg"
-                         alt="Dermatology care">
-
-                </div>
-
-                <div class="specialty-content">
-
-                    <div class="icon-box">
-                        <i class="fa-solid fa-hand-sparkles"></i>
-                    </div>
-
-                    <h3>
-                        Dermatology
-                    </h3>
-
-                    <p>
-                        Medical and aesthetic care for skin,
-                        hair, nails and common skin conditions.
-                    </p>
-
-                    <a href="#dermatology"
-                       class="text-link">
-
-                        View Treatments
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
     </div>
 
 </section>
+
+
+
+<!-- ================= SPECIALITY STRIP ================= -->
+
+<section class="speciality-strip">
+
+    <div class="container speciality-grid">
+
+        <div class="speciality-box">
+            <div class="speciality-icon">
+                <i class="fa-solid fa-bone"></i>
+            </div>
+
+            <div>
+                <h3>Orthopedics</h3>
+                <p>Bone, joint & spine care</p>
+            </div>
+        </div>
+
+
+        <div class="speciality-box">
+            <div class="speciality-icon skin-icon">
+                <i class="fa-solid fa-hand-sparkles"></i>
+            </div>
+
+            <div>
+                <h3>Dermatology</h3>
+                <p>Skin, hair & aesthetic care</p>
+            </div>
+        </div>
+
+
+        <div class="speciality-box">
+            <div class="speciality-icon">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <div>
+                <h3>Expert Doctors</h3>
+                <p>Experienced specialists</p>
+            </div>
+        </div>
+
+
+        <div class="speciality-box">
+            <div class="speciality-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+                <h3>Appointments</h3>
+                <p>Easy consultation booking</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
 
 
 <!-- ================= ABOUT ================= -->
 
-<section class="section about-section"
-         id="about">
+<section class="section about" id="about">
 
     <div class="container about-grid">
 
-        <div class="about-image">
+        <div class="about-images">
 
-            <img src="images/clinic.jpg"
-                 alt="Modern medical clinic">
+            <div class="about-main-img">
+                <img
+                    src="images/about.jpg"
+                    alt="Orthoderm Speciality Centre"
+                >
+            </div>
 
             <div class="experience-card">
 
-                <strong>10+</strong>
+                <i class="fa-solid fa-award"></i>
 
-                <span>
-                    Years of
-                    <br>
-                    Experience
-                </span>
+                <div>
+                    <strong>Specialist</strong>
+                    <span>Healthcare</span>
+                </div>
 
             </div>
 
@@ -433,62 +299,54 @@
         <div class="about-content">
 
             <span class="section-label">
-                ABOUT OUR CLINIC
+                ABOUT ORTHODERM
             </span>
 
             <h2>
-                Focused on Your Health.
-                <br>
-                Committed to Your Care.
+                Comprehensive Care with
+                <span>Expertise & Compassion</span>
             </h2>
 
             <p>
-                Our clinic brings together specialized
-                orthopedic and dermatology services in a
-                comfortable, clean and patient-friendly
-                environment.
+                Orthoderm Speciality Centre combines specialized
+                orthopedic and dermatological expertise to offer
+                patients a comprehensive healthcare experience.
             </p>
 
             <p>
-                We believe in accurate diagnosis,
-                transparent communication and treatment
-                plans designed around every patient's needs.
+                Our approach focuses on accurate diagnosis,
+                personalized treatment plans, modern medical
+                practices and the comfort of every patient.
             </p>
 
 
-            <div class="check-list">
+            <div class="about-features">
 
-                <div>
+                <div class="feature">
                     <i class="fa-solid fa-circle-check"></i>
-                    Experienced medical professionals
+                    <div>
+                        <h4>Patient-Centric Care</h4>
+                        <p>Comfort and wellbeing remain our priority.</p>
+                    </div>
                 </div>
 
-                <div>
+                <div class="feature">
                     <i class="fa-solid fa-circle-check"></i>
-                    Clear diagnosis and explanation
+                    <div>
+                        <h4>Modern Treatment Approach</h4>
+                        <p>We use current medical techniques and technology.</p>
+                    </div>
                 </div>
 
-                <div>
+                <div class="feature">
                     <i class="fa-solid fa-circle-check"></i>
-                    Ethical treatment approach
-                </div>
-
-                <div>
-                    <i class="fa-solid fa-circle-check"></i>
-                    Personalized follow-up care
+                    <div>
+                        <h4>Collaborative Expertise</h4>
+                        <p>Specialists work together for better care.</p>
+                    </div>
                 </div>
 
             </div>
-
-
-            <a href="#appointment"
-               class="btn btn-dark">
-
-                Schedule Consultation
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
 
         </div>
 
@@ -497,31 +355,27 @@
 </section>
 
 
+
 <!-- ================= DOCTORS ================= -->
 
-<section class="section doctors-section"
-         id="doctors">
+<section class="section doctors-section" id="doctors">
 
     <div class="container">
 
         <div class="section-heading">
 
-            <div>
+            <span class="section-label">
+                OUR TEAM
+            </span>
 
-                <span class="section-label">
-                    OUR DOCTORS
-                </span>
-
-                <h2>
-                    Meet Our Specialists
-                </h2>
-
-            </div>
+            <h2>
+                Meet Our
+                <span>Expert Doctors</span>
+            </h2>
 
             <p>
-                Experienced doctors focused on accurate
-                diagnosis, ethical treatment and
-                long-term patient care.
+                Experienced specialists dedicated to providing
+                personalized and compassionate medical care.
             </p>
 
         </div>
@@ -530,12 +384,16 @@
         <div class="doctor-grid">
 
 
-            <article class="doctor-card">
+            <!-- Doctor 1 -->
+
+            <div class="doctor-card">
 
                 <div class="doctor-image">
 
-                    <img src="images/doctor-1.jpg"
-                         alt="Orthopedic doctor">
+                    <img
+                        src="images/dr-chinna-durai.jpg"
+                        alt="Dr. Chinna Durai S"
+                    >
 
                     <div class="doctor-social">
 
@@ -551,40 +409,45 @@
 
                 </div>
 
-                <div class="doctor-content">
+                <div class="doctor-info">
 
-                    <span>
-                        ORTHOPEDICS
+                    <span class="doctor-speciality">
+                        Orthopedic Specialist
                     </span>
 
-                    <h3>
-                        Dr. Your Name
-                    </h3>
+                    <h3>Dr. Chinna Durai S</h3>
 
                     <p>
-                        Consultant Orthopedic &
-                        Joint Replacement Surgeon
+                        MBBS, Diploma in Orthopaedics,
+                        DNB - Orthopedics / Orthopedic Surgery
                     </p>
 
-                    <div class="doctor-meta">
-
-                        <i class="fa-solid fa-award"></i>
-
-                        10+ Years Experience
-
+                    <div class="doctor-tags">
+                        <span>Joint Replacement</span>
+                        <span>Spine Surgery</span>
                     </div>
+
+                    <a href="#" class="doctor-link">
+                        Get More Info
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
-            </article>
+            </div>
 
 
-            <article class="doctor-card">
+
+            <!-- Doctor 2 -->
+
+            <div class="doctor-card">
 
                 <div class="doctor-image">
 
-                    <img src="images/doctor-2.jpg"
-                         alt="Dermatologist">
+                    <img
+                        src="images/dr-snekavalli.jpg"
+                        alt="Dr. R. Snekavalli"
+                    >
 
                     <div class="doctor-social">
 
@@ -600,32 +463,32 @@
 
                 </div>
 
-                <div class="doctor-content">
+                <div class="doctor-info">
 
-                    <span>
-                        DERMATOLOGY
+                    <span class="doctor-speciality">
+                        Dermatologist
                     </span>
 
-                    <h3>
-                        Dr. Your Name
-                    </h3>
+                    <h3>Dr. R. Snekavalli</h3>
 
                     <p>
-                        Consultant Dermatologist &
-                        Aesthetic Specialist
+                        MBBS, MD - Dermatology,
+                        Venereology & Leprosy
                     </p>
 
-                    <div class="doctor-meta">
-
-                        <i class="fa-solid fa-award"></i>
-
-                        7+ Years Experience
-
+                    <div class="doctor-tags">
+                        <span>Dermatology</span>
+                        <span>Aesthetic Care</span>
                     </div>
+
+                    <a href="#" class="doctor-link">
+                        Get More Info
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
-            </article>
+            </div>
 
         </div>
 
@@ -634,128 +497,640 @@
 </section>
 
 
+
 <!-- ================= ORTHOPEDICS ================= -->
 
-<section class="section condition-section"
-         id="orthopedics">
+<section class="section speciality-section" id="orthopedics">
 
     <div class="container">
 
-        <div class="section-heading center">
+        <div class="section-heading">
 
             <span class="section-label">
                 ORTHOPEDICS
             </span>
 
             <h2>
-                Orthopedic Conditions We Treat
+                Orthopedic
+                <span>Treatments</span>
             </h2>
 
             <p>
-                Comprehensive care for common and
-                complex bone and joint conditions.
+                Specialized care for bones, joints, muscles,
+                spine and orthopedic conditions.
             </p>
 
         </div>
 
 
-        <div class="condition-grid">
+        <div class="treatment-grid">
 
 
-            <article class="condition-card">
+            <div class="treatment-card">
 
-                <img src="images/back-pain.jpg"
-                     alt="Back pain">
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-person"></i>
+                </div>
 
-                <div class="condition-overlay">
+                <h3>Frozen Shoulder</h3>
 
-                    <span>
-                        01
-                    </span>
+                <p>
+                    Care for shoulder pain, stiffness and
+                    restricted shoulder movement.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-person-walking"></i>
+                </div>
+
+                <h3>Back Pain</h3>
+
+                <p>
+                    Evaluation and treatment for different
+                    causes of spinal and back discomfort.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-bone"></i>
+                </div>
+
+                <h3>Total Knee / Hip Replacement</h3>
+
+                <p>
+                    Advanced care for damaged joints and
+                    mobility-related conditions.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-shoe-prints"></i>
+                </div>
+
+                <h3>Foot & Ankle Disorders</h3>
+
+                <p>
+                    Diagnosis and treatment of injuries,
+                    deformities and inflammatory conditions.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+
+                <h3>Trauma Surgery</h3>
+
+                <p>
+                    Specialized management of injuries
+                    caused by accidents and trauma.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-disease"></i>
+                </div>
+
+                <h3>Bone Tumor</h3>
+
+                <p>
+                    Specialist evaluation and management
+                    of abnormal bone growths.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ORTHOPEDIC CTA ================= -->
+
+<section class="specialist-banner">
+
+    <div class="container banner-grid">
+
+        <div>
+
+            <span class="section-label light">
+                ORTHOPEDIC SPECIALIST CARE
+            </span>
+
+            <h2>
+                Helping You Move Better
+                and Live Better
+            </h2>
+
+            <p>
+                Personalized orthopedic consultation and
+                treatment focused on mobility, recovery and
+                long-term wellbeing.
+            </p>
+
+        </div>
+
+        <a href="#appointment" class="btn btn-white">
+            Book Consultation
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DERMATOLOGY ================= -->
+
+<section class="section dermatology-section" id="dermatology">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                DERMATOLOGY
+            </span>
+
+            <h2>
+                Skin & Hair
+                <span>Treatments</span>
+            </h2>
+
+            <p>
+                Comprehensive dermatological and aesthetic
+                care for skin, hair and related concerns.
+            </p>
+
+        </div>
+
+
+        <div class="treatment-grid">
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h3>PRP for Hair & Skin</h3>
+
+                <p>
+                    Treatment approach used for hair concerns
+                    and skin rejuvenation.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <h3>Anti-Ageing Treatment</h3>
+
+                <p>
+                    Options designed to address visible signs
+                    of skin ageing.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+
+                <h3>Acne & Acne Scar Treatment</h3>
+
+                <p>
+                    Personalized care for active acne and
+                    acne-related scarring.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+
+                <h3>Laser Hair Reduction</h3>
+
+                <p>
+                    Advanced cosmetic treatment for reducing
+                    unwanted hair.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                </div>
+
+                <h3>Pigmentation Treatment</h3>
+
+                <p>
+                    Dermatological options for uneven skin
+                    tone and pigmentation concerns.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="treatment-card skin-card">
+
+                <div class="treatment-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h3>Chemical Peels</h3>
+
+                <p>
+                    Skin rejuvenation procedures for selected
+                    pigmentation, texture and acne concerns.
+                </p>
+
+                <a href="#">
+                    Learn More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>+</strong>
+            <span>Successful Surgeries</span>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-face-smile"></i>
+            <strong>%</strong>
+            <span>Patients Satisfied</span>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-bed"></i>
+            <strong>+</strong>
+            <span>Medical Beds</span>
+        </div>
+
+        <div class="stat">
+            <i class="fa-solid fa-award"></i>
+            <strong>+</strong>
+            <span>Years of Experience</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="section testimonials">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                PATIENT EXPERIENCES
+            </span>
+
+            <h2>
+                What Our Patients
+                <span>Say About Us</span>
+            </h2>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    The doctor listened carefully, explained
+                    the condition clearly and guided us through
+                    the treatment process patiently.
+                </p>
+
+                <div class="patient">
+                    <div class="patient-avatar">P</div>
+                    <div>
+                        <strong>Patient Review</strong>
+                        <span>Spinal Surgery</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    The treatment process was explained in
+                    detail and the overall experience was
+                    professional and reassuring.
+                </p>
+
+                <div class="patient">
+                    <div class="patient-avatar">P</div>
+                    <div>
+                        <strong>Patient Review</strong>
+                        <span>Knee Treatment</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    We received helpful guidance throughout
+                    the treatment journey and felt well supported
+                    by the medical team.
+                </p>
+
+                <div class="patient">
+                    <div class="patient-avatar">P</div>
+                    <div>
+                        <strong>Patient Review</strong>
+                        <span>Fracture Treatment</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BLOGS ================= -->
+
+<section class="section blogs" id="blogs">
+
+    <div class="container">
+
+        <div class="section-heading heading-flex">
+
+            <div>
+                <span class="section-label">
+                    OUR BLOG
+                </span>
+
+                <h2>
+                    Latest Health
+                    <span>Articles</span>
+                </h2>
+            </div>
+
+            <a href="#" class="view-all">
+                View All Articles
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <article class="blog-card">
+
+                <div class="blog-image">
+
+                    <img
+                        src="images/blog-1.jpg"
+                        alt="Dermatology article"
+                    >
+
+                    <span>Dermatology</span>
+
+                </div>
+
+                <div class="blog-content">
+
+                    <small>
+                        <i class="fa-regular fa-calendar"></i>
+                        Health & Wellness
+                    </small>
 
                     <h3>
-                        Back Pain
+                        Understanding Skin & Hair Care
                     </h3>
 
-                    <p>
-                        Spine pain, stiffness and
-                        movement-related problems.
-                    </p>
+                    <a href="#">
+                        Read More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <article class="condition-card">
 
-                <img src="images/knee-pain.jpg"
-                     alt="Knee pain">
+            <article class="blog-card">
 
-                <div class="condition-overlay">
+                <div class="blog-image">
 
-                    <span>
-                        02
-                    </span>
+                    <img
+                        src="images/blog-2.jpg"
+                        alt="Orthopedic article"
+                    >
+
+                    <span>Orthopedics</span>
+
+                </div>
+
+                <div class="blog-content">
+
+                    <small>
+                        <i class="fa-regular fa-calendar"></i>
+                        Orthopedic Care
+                    </small>
 
                     <h3>
-                        Knee Pain
+                        Understanding Bone & Joint Problems
                     </h3>
 
-                    <p>
-                        Diagnosis and treatment for
-                        knee pain and mobility issues.
-                    </p>
+                    <a href="#">
+                        Read More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <article class="condition-card">
 
-                <img src="images/joint-pain.jpg"
-                     alt="Joint stiffness">
+            <article class="blog-card">
 
-                <div class="condition-overlay">
+                <div class="blog-image">
 
-                    <span>
-                        03
-                    </span>
+                    <img
+                        src="images/blog-3.jpg"
+                        alt="Hip replacement article"
+                    >
 
-                    <h3>
-                        Joint Problems
-                    </h3>
-
-                    <p>
-                        Care for stiffness, arthritis
-                        and joint movement problems.
-                    </p>
+                    <span>Orthopedics</span>
 
                 </div>
 
-            </article>
+                <div class="blog-content">
 
-
-            <article class="condition-card">
-
-                <img src="images/sports-injury.jpg"
-                     alt="Sports injury">
-
-                <div class="condition-overlay">
-
-                    <span>
-                        04
-                    </span>
+                    <small>
+                        <i class="fa-regular fa-calendar"></i>
+                        Patient Education
+                    </small>
 
                     <h3>
-                        Sports Injuries
+                        A Guide to Hip Replacement Care
                     </h3>
 
-                    <p>
-                        Treatment for injuries caused
-                        by sports and physical activity.
-                    </p>
+                    <a href="#">
+                        Read More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
 
                 </div>
 
@@ -768,113 +1143,345 @@
 </section>
 
 
-<!-- ================= DERMATOLOGY ================= -->
 
-<section class="section dermatology-section"
-         id="dermatology">
+<!-- ================= APPOINTMENT ================= -->
+
+<section class="appointment" id="appointment">
+
+    <div class="container appointment-grid">
+
+        <div class="appointment-content">
+
+            <span class="section-label light">
+                BOOK AN APPOINTMENT
+            </span>
+
+            <h2>
+                Take the First Step
+                Towards Better Health
+            </h2>
+
+            <p>
+                Schedule a consultation with our specialist
+                doctors for personalized medical guidance.
+            </p>
+
+
+            <div class="appointment-contact">
+
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+                        <span>Call Us</span>
+                        <strong>+91 96000 77403</strong>
+                    </div>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+                        <span>Email</span>
+                        <strong>orthodermcentre@gmail.com</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="appointment-form">
+
+            <h3>Enquiry Now</h3>
+
+            <form>
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        placeholder="Full Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Subject"
+                    >
+
+                </div>
+
+
+                <textarea
+                    rows="5"
+                    placeholder="How can we help you?"
+                ></textarea>
+
+
+                <button type="submit" class="btn btn-primary">
+                    Submit Enquiry
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="contact">
 
     <div class="container">
 
         <div class="section-heading">
 
-            <div>
+            <span class="section-label">
+                CONTACT US
+            </span>
 
-                <span class="section-label">
-                    DERMATOLOGY
-                </span>
-
-                <h2>
-                    Skin & Hair Care
-                </h2>
-
-            </div>
-
-            <p>
-                Personalized treatment for common
-                skin, hair and nail concerns.
-            </p>
+            <h2>
+                Get In
+                <span>Touch With Us</span>
+            </h2>
 
         </div>
 
 
-        <div class="derma-grid">
+        <div class="contact-grid">
 
 
-            <article class="derma-card">
+            <div class="contact-card">
 
-                <div class="derma-image">
-
-                    <img src="images/acne.jpg"
-                         alt="Acne treatment">
-
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
                 </div>
 
-                <div class="derma-content">
+                <h3>Visit Us</h3>
 
-                    <div class="number">
-                        01
-                    </div>
+                <p>
+                    48, Metha, Ganesh Nagar Main Road,
+                    Mahalakshmi Nagar, Selaiyur,
+                    Chennai, Tamil Nadu 600073.
+                </p>
 
-                    <h3>
-                        Acne & Acne Scars
-                    </h3>
+            </div>
 
-                    <p>
-                        Treatment options for acne,
-                        inflammation and acne scars.
-                    </p>
 
-                    <a href="#appointment">
-                        Learn More
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+            <div class="contact-card">
 
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
                 </div>
 
-            </article>
+                <h3>Call Us</h3>
+
+                <p>
+                    +91 96000 77403
+                </p>
+
+                <a href="tel:+919600077403">
+                    Call Now
+                </a>
+
+            </div>
 
 
-            <article class="derma-card">
+            <div class="contact-card">
 
-                <div class="derma-image">
-
-                    <img src="images/skin-allergy.jpg"
-                         alt="Skin allergy">
-
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
 
-                <div class="derma-content">
+                <h3>Email Us</h3>
 
-                    <div class="number">
-                        02
-                    </div>
+                <p>
+                    orthodermcentre@gmail.com
+                </p>
 
-                    <h3>
-                        Skin Allergies
-                    </h3>
+                <a href="mailto:orthodermcentre@gmail.com">
+                    Send Email
+                </a>
 
-                    <p>
-                        Care for rashes, itching and
-                        allergic skin reactions.
-                    </p>
+            </div>
 
-                    <a href="#appointment">
-                        Learn More
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+        </div>
 
-                </div>
+    </div>
 
-            </article>
+</section>
 
 
-            <article class="derma-card">
 
-                <div class="derma-image">
+<!-- ================= FOOTER ================= -->
 
-                    <img src="images/pigmentation.jpg"
-                         alt="Pigmentation">
+<footer class="footer">
 
-                </div>
+    <div class="container footer-grid">
 
-                <div class="der
+
+        <div class="footer-about">
+
+            <a href="#home" class="logo footer-logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+                <span>
+                    <strong>ORTHO</strong><em>DERM</em>
+                    <small>Speciality Centre</small>
+                </span>
+
+            </a>
+
+            <p>
+                Orthoderm Speciality Centre brings together
+                orthopedic and dermatology expertise with a
+                patient-first approach to healthcare.
+            </p>
+
+
+            <div class="social-links">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#doctors">Our Doctors</a>
+            <a href="#blogs">Our Blogs</a>
+            <a href="#contact">Contact Us</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>Treatments</h3>
+
+            <a href="#orthopedics">Orthopedic Treatments</a>
+            <a href="#dermatology">Dermatology Treatments</a>
+            <a href="#">General Medicine</a>
+            <a href="#">Neurologist</a>
+            <a href="#">Psychiatrist</a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <h3>Opening Hours</h3>
+
+            <p>
+                <strong>Monday - Saturday</strong>
+                <br>
+                10 AM - 9 PM
+            </p>
+
+            <p>
+                <strong>Sunday</strong>
+                <br>
+                Holiday
+            </p>
+
+            <hr>
+
+            <p>
+                <strong>Appointment</strong>
+                <br>
+                9 AM - 8 PM
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 Orthoderm Speciality Centre.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= FLOATING BUTTONS ================= -->
+
+<a
+    href="tel:+919600077403"
+    class="floating-call"
+    aria-label="Call Orthoderm"
+>
+    <i class="fa-solid fa-phone"></i>
+</a>
+
+
+<a
+    href="https://wa.me/919600077403"
+    class="floating-whatsapp"
+    target="_blank"
+    aria-label="WhatsApp Orthoderm"
+>
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
