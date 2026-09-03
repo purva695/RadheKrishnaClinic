@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Radhe Krishna Clinic</title>
+
+    <link rel="stylesheet"
+        href="admin.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body class="admin-page">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+                <h2>Radhe Krishna</h2>
+                <span>Clinic Admin</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="add-blog.html">
+                <i class="fa-solid fa-plus"></i>
+                Add New Blog
+            </a>
+
+            <a href="blogs.html">
+                <i class="fa-solid fa-newspaper"></i>
+                Manage Blogs
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html"
+                target="_blank">
+
+                <i class="fa-solid fa-globe"></i>
+                View Website
+
+            </a>
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="admin-header">
+
+            <button
+                class="sidebar-toggle"
+                id="sidebarToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Welcome to Radhe Krishna Clinic Admin Panel
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard-content">
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Blogs
+                        </span>
+
+                        <h2 id="totalBlogs">
+                            6
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Published
+                        </span>
+
+                        <h2 id="publishedBlogs">
+                            6
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Today's Blogs
+                        </span>
+
+                        <h2>
+                            1
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUICK ACTION -->
+
+            <div class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            Blog Management
+                        </h2>
+
+                        <p>
+                            Create and manage clinic blogs.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="add-blog.html"
+                        class="admin-primary-btn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add New Blog
+
+                    </a>
+
+                </div>
+
+
+                <div class="empty-action">
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                    </div>
+
+                    <h3>
+                        Keep Your Website Updated
+                    </h3>
+
+                    <p>
+                        Publish helpful health articles
+                        regularly to keep your patients
+                        informed.
+                    </p>
+
+                    <a
+                        href="blogs.html"
+                        class="admin-secondary-btn">
+
+                        Manage Blogs
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

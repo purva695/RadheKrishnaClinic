@@ -1,56 +1,206 @@
 const express = require("express");
-const dotenv = require("dotenv");
+
+const mongoose = require("mongoose");
+
 const cors = require("cors");
 
-const connectDB = require("./config/database");
+const dotenv = require("dotenv");
+
+const bcrypt = require("bcryptjs");
 
 
-/* Load environment variables */
+
+/* =========================================
+   LOAD ENVIRONMENT VARIABLES
+========================================= */
 
 dotenv.config();
 
 
-/* Connect MongoDB */
 
-connectDB();
+/* =========================================
+   APP
+========================================= */
 
-
-/* Create Express app */
-
-const app = express();
-
-
-/* Middleware */
-
-app.use(cors());
-
-app.use(express.json());
-
-app.use(express.urlencoded({
-    extended: true
-}));
+const app =
+    express();
 
 
-/* Test Route */
 
-app.get("/", (req, res) => {
+/* =========================================
+   MIDDLEWARE
+========================================= */
 
-    res.json({
-        success: true,
-        message: "Radhe Krishna Clinic API is running"
-    });
-
-});
+app.use(
+    cors()
+);
 
 
-/* Start Server */
+app.use(
+    express.json({
+        limit: "10mb"
+    })
+);
 
-const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+);
 
-    console.log(
-        `Server running on http://localhost:${PORT}`
+
+
+/* =========================================
+   ROUTES
+========================================= */
+
+const authRoutes =
+    require("./routes/authRoutes");
+
+
+const blogRoutes =
+    require("./routes/blogRoutes");
+
+
+app.use(
+    "/api/auth",
+    authRoutes
+);
+
+
+app.use(
+    "/api/blogs",
+    blogRoutes
+);
+
+
+
+/* =========================================
+   TEST ROUTE
+========================================= */
+
+app.get(
+    "/",
+    (req, res) => {
+
+        res.json({
+
+            message:
+                "Radhe Krishna Clinic API is running."
+
+        });
+
+    }
+);
+
+
+
+/* =========================================
+   CREATE DEFAULT ADMIN
+========================================= */
+
+const Admin =
+    require("./models/Admin");
+
+
+async function createDefaultAdmin() {
+
+    try {
+
+        const existingAdmin =
+            await Admin.findOne({
+                email:
+                    process.env.ADMIN_EMAIL
+            });
+
+
+        if (existingAdmin) {
+
+            return;
+
+        }
+
+
+        const hashedPassword =
+            await bcrypt.hash(
+                process.env.ADMIN_PASSWORD,
+                12
+            );
+
+
+        await Admin.create({
+
+            email:
+                process.env.ADMIN_EMAIL,
+
+            password:
+                hashedPassword
+
+        });
+
+
+        console.log(
+            "Default admin created."
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "Admin creation error:",
+            error.message
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   DATABASE CONNECTION
+========================================= */
+
+mongoose
+    .connect(
+        process.env.MONGO_URI
+    )
+    .then(
+        async () => {
+
+            console.log(
+                "MongoDB connected successfully."
+            );
+
+
+            await createDefaultAdmin();
+
+
+            const PORT =
+                process.env.PORT || 5000;
+
+
+            app.listen(
+                PORT,
+                () => {
+
+                    console.log(
+                        `Server running on port ${PORT}`
+                    );
+
+                }
+            );
+
+        }
+    )
+    .catch(
+        (error) => {
+
+            console.error(
+                "MongoDB connection failed:",
+                error.message
+            );
+
+        }
     );
-
-});

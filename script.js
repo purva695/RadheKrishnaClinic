@@ -345,3 +345,674 @@ yearElements.forEach(function (element) {
         new Date().getFullYear();
 
 });
+
+/* =========================================================
+   DYNAMIC BLOGS
+   Loads published blogs from MongoDB
+========================================================= */
+
+const blogGrid =
+    document.getElementById("blogGrid");
+
+
+if (blogGrid) {
+
+    const blogLoading =
+        document.getElementById("blogLoading");
+
+
+    const blogError =
+        document.getElementById("blogError");
+
+
+    const blogEmpty =
+        document.getElementById("blogEmpty");
+
+
+
+    /* =========================================
+       LOAD BLOGS
+    ========================================= */
+
+    async function loadWebsiteBlogs() {
+
+        try {
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/blogs"
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to load blogs."
+                );
+
+            }
+
+
+
+            /* Hide loading */
+
+            blogLoading.style.display =
+                "none";
+
+
+
+            /* No blogs */
+
+            if (!data.length) {
+
+                blogEmpty.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+
+            /* Render blogs */
+
+            renderWebsiteBlogs(data);
+
+
+        } catch (error) {
+
+            console.error(
+                "Website blogs error:",
+                error
+            );
+
+
+            blogLoading.style.display =
+                "none";
+
+
+            blogError.style.display =
+                "block";
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       RENDER BLOG CARDS
+    ========================================= */
+
+    function renderWebsiteBlogs(blogs) {
+
+        blogGrid.innerHTML =
+            "";
+
+
+        blogs.forEach(
+            function (blog) {
+
+                const article =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                article.className =
+                    "blog-card";
+
+
+
+                /* =================================
+                   IMAGE
+                ================================= */
+
+                let imageHTML = "";
+
+
+                if (blog.image) {
+
+                    imageHTML = `
+
+                        <img
+                            src="${blog.image}"
+                            alt="${escapeBlogHTML(blog.title)}"
+                            loading="lazy">
+
+                    `;
+
+                } else {
+
+                    imageHTML = `
+
+                        <div class="blog-no-image">
+
+                            <i class="fa-regular fa-image"></i>
+
+                        </div>
+
+                    `;
+
+                }
+
+
+
+                /* =================================
+                   DATE
+                ================================= */
+
+                const date =
+                    blog.createdAt
+                        ? formatWebsiteBlogDate(
+                            blog.createdAt
+                        )
+                        : "";
+
+
+
+                /* =================================
+                   BLOG CARD
+                ================================= */
+
+                article.innerHTML = `
+
+                    <div class="blog-image">
+
+                        ${imageHTML}
+
+                        <span class="blog-category">
+
+                            ${escapeBlogHTML(
+                                blog.category ||
+                                "Health"
+                            )}
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="blog-content">
+
+                        <div class="blog-meta">
+
+                            <span>
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                                ${date}
+
+                            </span>
+
+
+                            <span>
+
+                                <i class="fa-regular fa-clock"></i>
+
+                                ${calculateReadTime(
+                                    blog.content || ""
+                                )}
+
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+
+                            ${escapeBlogHTML(
+                                blog.title
+                            )}
+
+                        </h3>
+
+
+                        <p>
+
+                            ${escapeBlogHTML(
+                                blog.excerpt
+                            )}
+
+                        </p>
+
+
+                        <a
+                            href="blog-details.html?id=${blog._id}">
+
+                            Read More
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                `;
+
+
+                blogGrid.appendChild(
+                    article
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       DATE FORMAT
+    ========================================= */
+
+    function formatWebsiteBlogDate(
+        dateString
+    ) {
+
+        const date =
+            new Date(dateString);
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       READ TIME
+    ========================================= */
+
+    function calculateReadTime(
+        content
+    ) {
+
+        const words =
+            content
+                .trim()
+                .split(/\s+/)
+                .filter(Boolean)
+                .length;
+
+
+        const minutes =
+            Math.max(
+                1,
+                Math.ceil(
+                    words / 200
+                )
+            );
+
+
+        return `${minutes} min read`;
+
+    }
+
+
+
+    /* =========================================
+       ESCAPE HTML
+    ========================================= */
+
+    function escapeBlogHTML(
+        text
+    ) {
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+
+        div.textContent =
+            text || "";
+
+
+        return div.innerHTML;
+
+    }
+
+
+
+    /* =========================================
+       LOAD
+    ========================================= */
+
+    loadWebsiteBlogs();
+
+}
+
+/* =========================================================
+   HOME PAGE - LOAD LATEST BLOGS
+========================================================= */
+
+const homeBlogGrid =
+    document.getElementById("homeBlogGrid");
+
+
+if (homeBlogGrid) {
+
+    async function loadHomeBlogs() {
+
+        try {
+
+            /* Loading */
+
+            homeBlogGrid.innerHTML = `
+
+                <div class="blog-loading">
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    Loading latest blogs...
+
+                </div>
+
+            `;
+
+
+            /* Get blogs */
+
+            const response =
+                await fetch(
+                    "http://localhost:5000/api/blogs"
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to load blogs."
+                );
+
+            }
+
+
+            /* No blogs */
+
+            if (!data.length) {
+
+                homeBlogGrid.innerHTML = `
+
+                    <div class="blog-empty">
+
+                        <i class="fa-regular fa-newspaper"></i>
+
+                        <h3>
+                            No blogs available
+                        </h3>
+
+                        <p>
+                            New health articles will appear here soon.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            /*
+                Latest 3 blogs only
+            */
+
+            const latestBlogs =
+                data.slice(0, 3);
+
+
+            homeBlogGrid.innerHTML =
+                "";
+
+
+            latestBlogs.forEach(
+                function (blog) {
+
+                    const article =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    article.className =
+                        "blog-card";
+
+
+                    /* =================================
+                       IMAGE
+                    ================================= */
+
+                    let imageHTML = `
+
+                        <div class="blog-image">
+
+                            <div class="blog-no-image">
+
+                                <i class="fa-regular fa-image"></i>
+
+                            </div>
+
+                            <span class="blog-category">
+                                ${escapeBlogHTML(
+                                    blog.category
+                                )}
+                            </span>
+
+                        </div>
+
+                    `;
+
+
+                    if (blog.image) {
+
+                        imageHTML = `
+
+                            <div class="blog-image">
+
+                                <img
+                                    src="${blog.image}"
+                                    alt="${escapeBlogHTML(
+                                        blog.title
+                                    )}">
+
+                                <span class="blog-category">
+
+                                    ${escapeBlogHTML(
+                                        blog.category
+                                    )}
+
+                                </span>
+
+                            </div>
+
+                        `;
+
+                    }
+
+
+
+                    /* =================================
+                       DATE
+                    ================================= */
+
+                    const date =
+                        blog.createdAt
+                            ? formatHomeBlogDate(
+                                blog.createdAt
+                            )
+                            : "";
+
+
+
+                    /* =================================
+                       ARTICLE
+                    ================================= */
+
+                    article.innerHTML = `
+
+                        ${imageHTML}
+
+
+                        <div class="blog-content">
+
+                            <div class="blog-meta">
+
+                                <span>
+
+                                    <i class="fa-regular fa-calendar"></i>
+
+                                    ${date}
+
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+
+                                ${escapeBlogHTML(
+                                    blog.title
+                                )}
+
+                            </h3>
+
+
+                            <p>
+
+                                ${escapeBlogHTML(
+                                    blog.excerpt
+                                )}
+
+                            </p>
+
+
+                            <a
+                                href="blog-details.html?id=${blog._id}">
+
+                                Read More
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+
+                    homeBlogGrid.appendChild(
+                        article
+                    );
+
+                }
+            );
+
+
+        } catch (error) {
+
+            console.error(
+                "Home blogs error:",
+                error
+            );
+
+
+            homeBlogGrid.innerHTML = `
+
+                <div class="blog-error">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h3>
+                        Unable to load blogs
+                    </h3>
+
+                    <p>
+                        Please try again later.
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       DATE FORMAT
+    ========================================= */
+
+    function formatHomeBlogDate(
+        dateString
+    ) {
+
+        const date =
+            new Date(dateString);
+
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       ESCAPE HTML
+    ========================================= */
+
+    function escapeBlogHTML(
+        text
+    ) {
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+
+        div.textContent =
+            text || "";
+
+
+        return div.innerHTML;
+
+    }
+
+
+
+    /* =========================================
+       LOAD
+    ========================================= */
+
+    loadHomeBlogs();
+
+}

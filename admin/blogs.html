@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Blogs | Radhe Krishna Clinic</title>
+
+    <link rel="stylesheet"
+        href="admin.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-logo-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+
+                <h2>Radhe Krishna</h2>
+
+                <span>Clinic Admin</span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="add-blog.html">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add New Blog
+
+            </a>
+
+
+            <a href="blogs.html"
+                class="active">
+
+                <i class="fa-solid fa-newspaper"></i>
+
+                Manage Blogs
+
+            </a>
+
+        </nav>
+
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html"
+                target="_blank">
+
+                <i class="fa-solid fa-globe"></i>
+
+                View Website
+
+            </a>
+
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================================
+         MAIN
+    ================================= -->
+
+    <main class="admin-main">
+
+
+        <header class="admin-header">
+
+            <button
+                class="sidebar-toggle"
+                id="sidebarToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div>
+
+                <h1>
+                    Manage Blogs
+                </h1>
+
+                <p>
+                    View, edit and delete your published blogs.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================================
+             BLOG MANAGEMENT
+        ================================= -->
+
+        <section class="blogs-management">
+
+
+            <!-- TOOLBAR -->
+
+            <div class="blogs-toolbar">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="search"
+                        id="blogSearch"
+                        placeholder="Search blogs...">
+
+                </div>
+
+
+                <a
+                    href="add-blog.html"
+                    class="admin-primary-btn">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add New Blog
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ================================
+                 LOADING
+            ================================= -->
+
+            <div
+                id="blogsLoading"
+                class="blogs-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Loading blogs...
+
+            </div>
+
+
+
+            <!-- ================================
+                 ERROR
+            ================================= -->
+
+            <div
+                id="blogsError"
+                class="blogs-error"
+                style="display: none;">
+
+                Unable to load blogs.
+
+            </div>
+
+
+
+            <!-- ================================
+                 EMPTY
+            ================================= -->
+
+            <div
+                id="blogsEmpty"
+                class="blogs-empty"
+                style="display: none;">
+
+                <i class="fa-regular fa-newspaper"></i>
+
+                <h3>
+                    No Blogs Found
+                </h3>
+
+                <p>
+                    Add your first blog from the Add New Blog page.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================================
+                 BLOG TABLE
+            ================================= -->
+
+            <div class="blogs-table-wrapper"
+                id="blogsTableWrapper"
+                style="display: none;">
+
+                <table class="blogs-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Blog
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="blogsTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

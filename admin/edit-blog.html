@@ -2,27 +2,26 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Add Blog | Radhe Krishna Clinic</title>
+    <title>Edit Blog | Radhe Krishna Clinic</title>
 
-    <link rel="stylesheet"
-        href="admin.css">
+    <link rel="stylesheet" href="admin.css">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 </head>
 
 
 <body class="admin-page">
 
 
-    <!-- SIDEBAR -->
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
 
     <aside class="sidebar" id="sidebar">
 
@@ -45,23 +44,25 @@
             <a href="dashboard.html">
 
                 <i class="fa-solid fa-chart-line"></i>
+
                 Dashboard
 
             </a>
 
 
-            <a href="add-blog.html"
-                class="active">
+            <a href="add-blog.html">
 
                 <i class="fa-solid fa-plus"></i>
+
                 Add New Blog
 
             </a>
 
 
-            <a href="blogs.html">
+            <a href="blogs.html" class="active">
 
                 <i class="fa-solid fa-newspaper"></i>
+
                 Manage Blogs
 
             </a>
@@ -71,11 +72,10 @@
 
         <div class="sidebar-bottom">
 
-            <a
-                href="../index.html"
-                target="_blank">
+            <a href="../index.html" target="_blank">
 
                 <i class="fa-solid fa-globe"></i>
+
                 View Website
 
             </a>
@@ -84,6 +84,7 @@
             <button id="logoutBtn">
 
                 <i class="fa-solid fa-right-from-bracket"></i>
+
                 Logout
 
             </button>
@@ -94,10 +95,14 @@
 
 
 
-    <!-- MAIN -->
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
 
     <main class="admin-main">
 
+
+        <!-- HEADER -->
 
         <header class="admin-header">
 
@@ -112,12 +117,10 @@
 
             <div>
 
-                <h1>
-                    Add New Blog
-                </h1>
+                <h1>Edit Blog</h1>
 
                 <p>
-                    Create a new health article for your website.
+                    Update your existing blog article.
                 </p>
 
             </div>
@@ -126,28 +129,31 @@
 
 
 
-        <!-- BLOG FORM -->
+        <!-- ================================
+             EDIT BLOG FORM
+        ================================= -->
 
         <section class="blog-form-section">
 
 
             <form
-                id="blogForm"
+                id="editBlogForm"
                 class="blog-form">
 
 
-                <!-- TITLE -->
+                <!-- BLOG TITLE -->
 
                 <div class="form-field full-width">
 
-                    <label for="blogTitle">
+                    <label for="editBlogTitle">
                         Blog Title
                     </label>
 
                     <input
                         type="text"
-                        id="blogTitle"
+                        id="editBlogTitle"
                         name="title"
+                        value="Common Causes of Knee Pain"
                         placeholder="Enter blog title"
                         required>
 
@@ -159,12 +165,12 @@
 
                 <div class="form-field">
 
-                    <label for="blogCategory">
+                    <label for="editBlogCategory">
                         Category
                     </label>
 
                     <select
-                        id="blogCategory"
+                        id="editBlogCategory"
                         name="category"
                         required>
 
@@ -172,7 +178,7 @@
                             Select Category
                         </option>
 
-                        <option value="Orthopedics">
+                        <option value="Orthopedics" selected>
                             Orthopedics
                         </option>
 
@@ -198,13 +204,13 @@
 
                 <div class="form-field">
 
-                    <label for="blogAuthor">
+                    <label for="editBlogAuthor">
                         Author
                     </label>
 
                     <input
                         type="text"
-                        id="blogAuthor"
+                        id="editBlogAuthor"
                         name="author"
                         value="Radhe Krishna Clinic"
                         placeholder="Author name">
@@ -213,30 +219,90 @@
 
 
 
-                <!-- IMAGE -->
+                <!-- ================================
+                     CURRENT IMAGE
+                ================================= -->
 
                 <div class="form-field full-width">
 
-                    <label for="blogImage">
+                    <label>
                         Featured Image
                     </label>
+
+
+                    <div class="current-image-box"
+                        id="currentImageBox">
+
+
+                        <p class="image-title">
+                            Current Image
+                        </p>
+
+
+                        <div class="current-image-wrapper">
+
+                            <img
+                                id="currentBlogImage"
+                                src="../images/blog-1.jpg"
+                                alt="Current Blog Image">
+
+
+                            <!-- REMOVE IMAGE BUTTON -->
+
+                            <button
+                                type="button"
+                                id="removeCurrentImage"
+                                class="remove-image-btn">
+
+                                <i class="fa-solid fa-trash"></i>
+
+                                Remove Image
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- IMAGE REMOVED MESSAGE -->
+
+                    <div
+                        id="imageRemovedMessage"
+                        class="image-removed-message"
+                        style="display: none;">
+
+                        <i class="fa-solid fa-image"></i>
+
+                        Current image has been removed.
+
+                    </div>
+
+
+
+                    <!-- ================================
+                         UPLOAD NEW IMAGE
+                    ================================= -->
 
                     <div class="file-upload">
 
                         <input
                             type="file"
-                            id="blogImage"
+                            id="editBlogImage"
                             name="image"
                             accept="image/*">
 
+
                         <label
-                            for="blogImage"
+                            for="editBlogImage"
                             class="file-label">
 
                             <i class="fa-solid fa-cloud-arrow-up"></i>
 
                             <span>
-                                Choose Blog Image
+                                Choose New Image
                             </span>
 
                             <small>
@@ -248,10 +314,14 @@
                     </div>
 
 
+
+                    <!-- NEW IMAGE PREVIEW -->
+
                     <div
-                        id="imagePreview"
+                        id="editImagePreview"
                         class="image-preview">
                     </div>
+
 
                 </div>
 
@@ -261,56 +331,72 @@
 
                 <div class="form-field full-width">
 
-                    <label for="blogExcerpt">
+                    <label for="editBlogExcerpt">
                         Short Description
                     </label>
 
+
                     <textarea
-                        id="blogExcerpt"
+                        id="editBlogExcerpt"
                         name="excerpt"
                         rows="4"
                         maxlength="250"
-                        placeholder="Write a short description of the blog..."
-                        required></textarea>
+                        placeholder="Write a short description..."
+                        required>Learn about the common causes of knee pain, warning signs and when you should consult an orthopedic specialist.</textarea>
+
 
                     <small class="field-hint">
-                        Keep it short. This will appear on the blog cards.
+
+                        This description appears on the blog card.
+
                     </small>
 
                 </div>
 
 
 
-                <!-- CONTENT -->
+                <!-- BLOG CONTENT -->
 
                 <div class="form-field full-width">
 
-                    <label for="blogContent">
+                    <label for="editBlogContent">
                         Blog Content
                     </label>
 
+
                     <textarea
-                        id="blogContent"
+                        id="editBlogContent"
                         name="content"
-                        rows="14"
-                        placeholder="Write your complete blog content here..."
-                        required></textarea>
+                        rows="15"
+                        placeholder="Write your complete blog content..."
+                        required>Knee pain is a common problem that can affect people of different ages. It may occur because of injuries, overuse, age-related changes or other conditions.
+
+Understanding the cause of knee pain is important because early evaluation can help prevent the problem from becoming more serious.
+
+If your knee pain continues for a long time, becomes severe or affects your daily activities, it is advisable to consult a qualified orthopedic specialist.
+
+At Radhe Krishna Clinic, patients can receive appropriate evaluation and guidance based on their symptoms and condition.</textarea>
+
 
                     <small class="field-hint">
-                        Write the complete article content here.
+
+                        You can edit the complete article here.
+
                     </small>
 
                 </div>
 
 
 
-                <!-- BUTTONS -->
+                <!-- ACTION BUTTONS -->
 
                 <div class="form-actions">
 
                     <a
-                        href="dashboard.html"
+                        href="blogs.html"
                         class="cancel-btn">
+
+                        <i class="fa-solid fa-xmark"></i>
 
                         Cancel
 
@@ -321,17 +407,20 @@
                         type="submit"
                         class="admin-primary-btn">
 
-                        <i class="fa-solid fa-paper-plane"></i>
+                        <i class="fa-solid fa-rotate"></i>
 
-                        Publish Blog
+                        Update Blog
 
                     </button>
 
                 </div>
 
 
+
+                <!-- MESSAGE -->
+
                 <p
-                    id="blogMessage"
+                    id="editBlogMessage"
                     class="form-message">
                 </p>
 
