@@ -9,11 +9,14 @@
         content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Read the latest health, orthopedic and dermatology blogs from Radhe Krishna Clinic.">
+        content="Read health, orthopedic and dermatology articles from Radhe Krishna Clinic.">
 
     <title>
-        Health Blog | Radhe Krishna Clinic
+        Blog Details | Radhe Krishna Clinic
     </title>
+
+
+    <!-- GOOGLE FONT -->
 
     <link rel="preconnect"
         href="https://fonts.googleapis.com">
@@ -26,11 +29,18 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+
+    <!-- FONT AWESOME -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet"
+
+    <!-- WEBSITE CSS -->
+
+    <link
+        rel="stylesheet"
         href="style.css">
 
 </head>
@@ -39,7 +49,9 @@
 <body>
 
 
-    <!-- TOP BAR -->
+    <!-- =========================================
+         TOP BAR
+    ========================================== -->
 
     <div class="top-bar">
 
@@ -48,13 +60,20 @@
             <div class="top-info">
 
                 <span>
+
                     <i class="fa-solid fa-phone"></i>
+
                     +91 94603 17217
+
                 </span>
 
+
                 <span>
+
                     <i class="fa-solid fa-envelope"></i>
+
                     radhekrishnahospital@gmail.com
+
                 </span>
 
             </div>
@@ -62,19 +81,20 @@
 
             <div class="top-social">
 
-                <a href="https://www.facebook.com/rkclinicgangapurcity?rdid=HuITeAftyRmmylLG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DoTfgZeCz%2F"
+                <a
+                    href="https://www.facebook.com/rkclinicgangapurcity"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook">
+                    rel="noopener noreferrer">
 
                     <i class="fab fa-facebook-f"></i>
 
                 </a>
 
-                <a href="https://www.instagram.com/rkclinicgangapurcity?utm_source=qr&igsi=MXBibDN2cHZ5NGdzcg%3D%3D"
+
+                <a
+                    href="https://www.instagram.com/rkclinicgangapurcity"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram">
+                    rel="noopener noreferrer">
 
                     <i class="fab fa-instagram"></i>
 
@@ -88,18 +108,23 @@
 
 
 
-    <!-- NAVBAR -->
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
     <header class="header">
 
         <div class="container navbar">
 
-            <a href="index.html"
+
+            <a
+                href="index.html"
                 class="logo">
 
                 <img
                     src="images/logo.png"
                     alt="Radhe Krishna Clinic Logo">
+
 
                 <div class="logo-text">
 
@@ -114,6 +139,7 @@
                 </div>
 
             </a>
+
 
 
             <nav class="nav-menu">
@@ -134,16 +160,20 @@
                     Our Doctors
                 </a>
 
-                <a href="blog.html"
+                <a
+                    href="blog.html"
                     class="active">
+
                     Blogs
+
                 </a>
 
                 <a href="index.html#contact">
                     Contact
                 </a>
 
-                <a href="index.html#appointment"
+                <a
+                    href="index.html#appointment"
                     class="nav-btn">
 
                     Book Appointment
@@ -153,10 +183,10 @@
             </nav>
 
 
+
             <button
                 class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open Menu">
+                id="menuToggle">
 
                 <i class="fa-solid fa-bars"></i>
 
@@ -168,7 +198,9 @@
 
 
 
-    <!-- MOBILE MENU -->
+    <!-- =========================================
+         MOBILE MENU
+    ========================================== -->
 
     <div
         class="mobile-menu"
@@ -198,7 +230,8 @@
             Contact
         </a>
 
-        <a href="index.html#appointment"
+        <a
+            href="index.html#appointment"
             class="mobile-btn">
 
             Book Appointment
@@ -209,433 +242,169 @@
 
 
 
-    <!-- PAGE BANNER -->
+    <!-- =========================================
+         BLOG DETAIL
+    ========================================== -->
 
-    <section class="page-banner">
-
-        <div class="container">
-
-            <span class="section-label">
-                HEALTH & WELLNESS
-            </span>
-
-            <h1>
-                Our Health Blog
-            </h1>
-
-            <p>
-                Helpful information, expert insights
-                and health tips from Radhe Krishna Clinic.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- BLOG SECTION -->
-
-    <section class="blog-section section-padding">
+    <main class="blog-detail-page">
 
         <div class="container">
 
 
-            <div class="section-heading center">
+            <!-- BACK BUTTON -->
 
-                <span class="section-label">
-                    LATEST ARTICLES
-                </span>
+            <a
+                href="blog.html"
+                class="blog-back-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Blogs
+
+            </a>
+
+
+
+            <!-- LOADING -->
+
+            <div
+                id="blogDetailLoading"
+                class="blog-detail-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Loading blog...
+
+            </div>
+
+
+
+            <!-- ERROR -->
+
+            <div
+                id="blogDetailError"
+                class="blog-detail-error"
+                style="display:none;">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
 
                 <h2>
-                    Health Tips & Medical Insights
+                    Blog Not Found
                 </h2>
 
                 <p>
-                    Stay informed with useful information
-                    about orthopedic and dermatology care.
+                    We could not find the requested blog.
                 </p>
 
+                <a
+                    href="blog.html"
+                    class="primary-btn">
+
+                    View All Blogs
+
+                </a>
+
             </div>
 
 
 
-            <div class="blog-grid">
+            <!-- BLOG CONTENT -->
+
+            <article
+                id="blogDetail"
+                class="blog-detail"
+                style="display:none;">
 
 
-                <!-- BLOG 1 -->
+                <!-- CATEGORY -->
 
-                <article class="blog-card">
+                <span
+                    id="detailCategory"
+                    class="section-label">
 
-                    <div class="blog-image">
+                </span>
 
-                        <img
-                            src="images/Knee Pain.jpg"
-                            alt="Knee Pain">
 
-                        <span class="blog-category">
-                            Orthopedics
+
+                <!-- TITLE -->
+
+                <h1
+                    id="detailTitle">
+
+                </h1>
+
+
+
+                <!-- META -->
+
+                <div class="blog-detail-meta">
+
+                    <span>
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <span id="detailAuthor">
                         </span>
 
-                    </div>
+                    </span>
 
 
-                    <div class="blog-content">
+                    <span>
 
-                        <div class="blog-meta">
+                        <i class="fa-regular fa-calendar"></i>
 
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                01 Sep 2026
-                            </span>
-
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                5 min read
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Common Causes of Knee Pain
-                        </h3>
-
-
-                        <p>
-                            Learn about some common causes
-                            of knee pain and when you should
-                            consider consulting a specialist.
-                        </p>
-
-
-                        <a
-                            href="blog-details.html?blog=knee-pain">
-
-                            Read More
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BLOG 2 -->
-
-                <article class="blog-card">
-
-                    <div class="blog-image">
-
-                        <img
-                            src="images/back-pain.jpg"
-                            alt="Back Pain">
-
-                        <span class="blog-category">
-                            Orthopedics
+                        <span id="detailDate">
                         </span>
 
-                    </div>
+                    </span>
 
+                </div>
 
-                    <div class="blog-content">
 
-                        <div class="blog-meta">
 
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                29 Aug 2026
-                            </span>
+                <!-- IMAGE -->
 
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                4 min read
-                            </span>
+                <div class="blog-detail-image">
 
-                        </div>
+                    <img
+                        id="detailImage"
+                        src=""
+                        alt="Blog Image">
 
+                </div>
 
-                        <h3>
-                            Simple Ways to Manage Back Pain
-                        </h3>
 
 
-                        <p>
-                            Understand some everyday habits
-                            that may help support a healthier
-                            back and better posture.
-                        </p>
+                <!-- EXCERPT -->
 
+                <div
+                    id="detailExcerpt"
+                    class="blog-detail-excerpt">
 
-                        <a
-                            href="blog-details.html?blog=back-pain">
+                </div>
 
-                            Read More
 
-                            <i class="fa-solid fa-arrow-right"></i>
 
-                        </a>
+                <!-- CONTENT -->
 
-                    </div>
+                <div
+                    id="detailContent"
+                    class="blog-detail-content">
 
-                </article>
+                </div>
 
 
-
-                <!-- BLOG 3 -->
-
-                <article class="blog-card">
-
-                    <div class="blog-image">
-
-                        <img
-                            src="images/acne-treatment.jpg"
-                            alt="Acne Treatment">
-
-                        <span class="blog-category">
-                            Dermatology
-                        </span>
-
-                    </div>
-
-
-                    <div class="blog-content">
-
-                        <div class="blog-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                27 Aug 2026
-                            </span>
-
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                6 min read
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Understanding Common Acne Triggers
-                        </h3>
-
-
-                        <p>
-                            Learn about common factors that
-                            can contribute to acne and why
-                            personalized treatment may help.
-                        </p>
-
-
-                        <a
-                            href="blog-details.html?blog=acne">
-
-                            Read More
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BLOG 4 -->
-
-                <article class="blog-card">
-
-                    <div class="blog-image">
-
-                        <img
-                            src="images/prp-treatment.jpg"
-                            alt="Hair Treatment">
-
-                        <span class="blog-category">
-                            Dermatology
-                        </span>
-
-                    </div>
-
-
-                    <div class="blog-content">
-
-                        <div class="blog-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                24 Aug 2026
-                            </span>
-
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                5 min read
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Understanding Hair Fall
-                        </h3>
-
-
-                        <p>
-                            Hair fall can have several causes.
-                            Learn why identifying the underlying
-                            cause is an important first step.
-                        </p>
-
-
-                        <a
-                            href="blog-details.html?blog=hair-fall">
-
-                            Read More
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BLOG 5 -->
-
-                <article class="blog-card">
-
-                    <div class="blog-image">
-
-                        <img
-                            src="images/frozen-shoulder.jpg"
-                            alt="Frozen Shoulder">
-
-                        <span class="blog-category">
-                            Orthopedics
-                        </span>
-
-                    </div>
-
-
-                    <div class="blog-content">
-
-                        <div class="blog-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                21 Aug 2026
-                            </span>
-
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                5 min read
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            What Is Frozen Shoulder?
-                        </h3>
-
-
-                        <p>
-                            Learn about frozen shoulder,
-                            its symptoms and why professional
-                            evaluation can be important.
-                        </p>
-
-
-                        <a
-                            href="blog-details.html?blog=frozen-shoulder">
-
-                            Read More
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BLOG 6 -->
-
-                <article class="blog-card">
-
-                    <div class="blog-image">
-
-                        <img
-                            src="images/knee-replacement.jpg"
-                            alt="Joint Health">
-
-                        <span class="blog-category">
-                            Health
-                        </span>
-
-                    </div>
-
-
-                    <div class="blog-content">
-
-                        <div class="blog-meta">
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                18 Aug 2026
-                            </span>
-
-                            <span>
-                                <i class="fa-regular fa-clock"></i>
-                                4 min read
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Tips for Maintaining Joint Health
-                        </h3>
-
-
-                        <p>
-                            Simple lifestyle habits can help
-                            support mobility and overall joint
-                            health.
-                        </p>
-
-
-                        <a
-                            href="blog-details.html?blog=joint-health">
-
-                            Read More
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
+            </article>
 
         </div>
 
-    </section>
+    </main>
 
 
 
-    <!-- CTA -->
+    <!-- =========================================
+         CTA
+    ========================================== -->
 
     <section class="cta-section">
 
@@ -644,18 +413,27 @@
             <div class="cta-content">
 
                 <span class="section-label">
+
                     NEED MEDICAL ADVICE?
+
                 </span>
 
+
                 <h2>
+
                     Take the First Step Towards
                     Better Health
+
                 </h2>
 
+
                 <p>
+
                     Schedule an appointment with our
                     specialists for personalized care.
+
                 </p>
+
 
                 <a
                     href="index.html#appointment"
@@ -675,7 +453,9 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
     <footer class="footer">
 
@@ -691,6 +471,7 @@
                     <img
                         src="images/logo.png"
                         alt="Radhe Krishna Clinic Logo">
+
 
                     <div>
 
@@ -708,29 +489,30 @@
 
 
                 <p>
+
                     Radhe Krishna Clinic provides
                     specialized orthopedic and
                     dermatology care with a focus
                     on personalized treatment and
                     patient comfort.
+
                 </p>
 
 
                 <div class="footer-social">
 
-                    <a href="https://www.facebook.com/rkclinicgangapurcity?rdid=HuITeAftyRmmylLG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1DoTfgZeCz%2F"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook">
+                    <a
+                        href="https://www.facebook.com/rkclinicgangapurcity"
+                        target="_blank">
 
                         <i class="fab fa-facebook-f"></i>
 
                     </a>
 
-                    <a href="https://www.instagram.com/rkclinicgangapurcity?utm_source=qr&igsi=MXBibDN2cHZ5NGdzcg%3D%3D"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram">
+
+                    <a
+                        href="https://www.instagram.com/rkclinicgangapurcity"
+                        target="_blank">
 
                         <i class="fab fa-instagram"></i>
 
@@ -805,18 +587,29 @@
                 </h4>
 
                 <p>
+
                     <i class="fa-solid fa-phone"></i>
+
                     +91 94603 17217
+
                 </p>
 
+
                 <p>
+
                     <i class="fa-solid fa-envelope"></i>
+
                     radhekrishnahospital@gmail.com
+
                 </p>
 
+
                 <p>
+
                     <i class="fa-solid fa-location-dot"></i>
+
                     Saloda Mode, Gangapur City
+
                 </p>
 
             </div>
@@ -824,17 +617,17 @@
         </div>
 
 
+
         <div class="footer-bottom">
 
             <div class="container">
 
                 <p>
-                    ©
-                    <span class="current-year">
-                        2026
-                    </span>
+
+                    © 2026
                     Radhe Krishna Clinic.
                     All Rights Reserved.
+
                 </p>
 
             </div>
@@ -845,7 +638,324 @@
 
 
 
+    <!-- WEBSITE JS -->
+
     <script src="script.js"></script>
+
+
+    <!-- BLOG DETAIL JS -->
+
+    <script>
+
+        /* =========================================
+           GET BLOG ID
+        ========================================= */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const blogId =
+            params.get("id");
+
+
+
+        const loading =
+            document.getElementById(
+                "blogDetailLoading"
+            );
+
+
+        const errorBox =
+            document.getElementById(
+                "blogDetailError"
+            );
+
+
+        const blogDetail =
+            document.getElementById(
+                "blogDetail"
+            );
+
+
+
+        /* =========================================
+           LOAD BLOG
+        ========================================= */
+
+        async function loadBlogDetails() {
+
+            if (!blogId) {
+
+                showError();
+
+                return;
+
+            }
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `http://localhost:5000/api/blogs/${blogId}`
+                    );
+
+
+                const blog =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        blog.message ||
+                        "Blog not found."
+                    );
+
+                }
+
+
+
+                /* =================================
+                   SET DATA
+                ================================= */
+
+                document.getElementById(
+                    "detailCategory"
+                ).textContent =
+                    blog.category || "Health";
+
+
+                document.getElementById(
+                    "detailTitle"
+                ).textContent =
+                    blog.title || "";
+
+
+                document.getElementById(
+                    "detailAuthor"
+                ).textContent =
+                    blog.author ||
+                    "Radhe Krishna Clinic";
+
+
+                document.getElementById(
+                    "detailDate"
+                ).textContent =
+                    formatDate(
+                        blog.createdAt
+                    );
+
+
+                document.getElementById(
+                    "detailExcerpt"
+                ).textContent =
+                    blog.excerpt || "";
+
+
+
+                /* =================================
+                   IMAGE
+                ================================= */
+
+                const image =
+                    document.getElementById(
+                        "detailImage"
+                    );
+
+
+                if (blog.image) {
+
+                    image.src =
+                        blog.image;
+
+                    image.alt =
+                        blog.title || "Blog Image";
+
+                    image.style.display =
+                        "block";
+
+                } else {
+
+                    image.style.display =
+                        "none";
+
+                }
+
+
+
+                /* =================================
+                   CONTENT
+                ================================= */
+
+                const content =
+                    document.getElementById(
+                        "detailContent"
+                    );
+
+
+                /*
+                   Convert line breaks into paragraphs.
+                */
+
+                content.innerHTML =
+                    formatBlogContent(
+                        blog.content || ""
+                    );
+
+
+
+                /* =================================
+                   SHOW BLOG
+                ================================= */
+
+                loading.style.display =
+                    "none";
+
+
+                blogDetail.style.display =
+                    "block";
+
+
+            } catch (err) {
+
+                console.error(
+                    "Blog detail error:",
+                    err
+                );
+
+
+                showError();
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           FORMAT DATE
+        ========================================= */
+
+        function formatDate(
+            date
+        ) {
+
+            if (!date) {
+
+                return "";
+
+            }
+
+
+            return new Date(date)
+                .toLocaleDateString(
+                    "en-IN",
+                    {
+
+                        day: "2-digit",
+
+                        month: "long",
+
+                        year: "numeric"
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================
+           FORMAT CONTENT
+        ========================================= */
+
+        function formatBlogContent(
+            text
+        ) {
+
+            const paragraphs =
+                text
+                    .split(/\n+/)
+                    .filter(
+                        paragraph =>
+                            paragraph.trim() !== ""
+                    );
+
+
+            return paragraphs
+                .map(
+                    paragraph => `
+
+                        <p>
+                            ${escapeHTML(
+                                paragraph
+                            )}
+                        </p>
+
+                    `
+                )
+                .join("");
+
+        }
+
+
+
+        /* =========================================
+           ESCAPE HTML
+        ========================================= */
+
+        function escapeHTML(
+            text
+        ) {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.textContent =
+                text;
+
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =========================================
+           ERROR
+        ========================================= */
+
+        function showError() {
+
+            loading.style.display =
+                "none";
+
+
+            blogDetail.style.display =
+                "none";
+
+
+            errorBox.style.display =
+                "block";
+
+        }
+
+
+
+        /* =========================================
+           START
+        ========================================= */
+
+        loadBlogDetails();
+
+    </script>
 
 </body>
 
