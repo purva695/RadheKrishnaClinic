@@ -1842,3 +1842,202 @@ function escapeHTML(text) {
 
     return div.innerHTML;
 }
+
+/* =========================================================
+   DASHBOARD STATISTICS
+========================================================= */
+
+const totalBlogsElement =
+    document.getElementById("totalBlogs");
+
+const publishedBlogsElement =
+    document.getElementById("publishedBlogs");
+
+const todayBlogsElement =
+    document.getElementById("todayBlogs");
+
+
+if (
+    totalBlogsElement &&
+    publishedBlogsElement &&
+    todayBlogsElement
+) {
+
+
+    /* =========================================
+       LOAD DASHBOARD STATS
+    ========================================= */
+
+    async function loadDashboardStats() {
+
+        try {
+
+            /* Loading state */
+
+            totalBlogsElement.textContent =
+                "...";
+
+            publishedBlogsElement.textContent =
+                "...";
+
+            todayBlogsElement.textContent =
+                "...";
+
+
+            /* =================================
+               GET BLOGS FROM API
+            ================================= */
+
+            const response =
+                await fetch(
+                    `${API_URL}/blogs`
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to load dashboard statistics."
+                );
+            }
+
+
+            /* =================================
+               HANDLE API RESPONSE
+            ================================= */
+
+            const blogs =
+                Array.isArray(data)
+                    ? data
+                    : data.blogs || [];
+
+
+            /* =================================
+               TOTAL BLOGS
+            ================================= */
+
+            const totalBlogs =
+                blogs.length;
+
+
+            totalBlogsElement.textContent =
+                totalBlogs;
+
+
+            /* =================================
+               PUBLISHED BLOGS
+               
+               Currently all blogs created by
+               our admin are published.
+            ================================= */
+
+            const publishedBlogs =
+                blogs.filter(
+                    function (blog) {
+
+                        /*
+                           If backend has status,
+                           check it.
+
+                           Otherwise consider
+                           the blog published.
+                        */
+
+                        return (
+                            !blog.status ||
+                            blog.status === "published" ||
+                            blog.status === "Published"
+                        );
+
+                    }
+                ).length;
+
+
+            publishedBlogsElement.textContent =
+                publishedBlogs;
+
+
+            /* =================================
+               TODAY'S BLOGS
+            ================================= */
+
+            const today =
+                new Date();
+
+
+            const todayBlogs =
+                blogs.filter(
+                    function (blog) {
+
+                        if (!blog.createdAt) {
+
+                            return false;
+
+                        }
+
+
+                        const blogDate =
+                            new Date(
+                                blog.createdAt
+                            );
+
+
+                        return (
+
+                            blogDate.getDate() ===
+                            today.getDate()
+
+                            &&
+
+                            blogDate.getMonth() ===
+                            today.getMonth()
+
+                            &&
+
+                            blogDate.getFullYear() ===
+                            today.getFullYear()
+
+                        );
+
+                    }
+                ).length;
+
+
+            todayBlogsElement.textContent =
+                todayBlogs;
+
+
+        } catch (error) {
+
+            console.error(
+                "Dashboard stats error:",
+                error
+            );
+
+
+            totalBlogsElement.textContent =
+                "0";
+
+            publishedBlogsElement.textContent =
+                "0";
+
+            todayBlogsElement.textContent =
+                "0";
+
+        }
+
+    }
+
+
+    /* =========================================
+       LOAD STATS
+    ========================================= */
+
+    loadDashboardStats();
+
+}
