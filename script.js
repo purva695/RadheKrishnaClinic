@@ -380,7 +380,7 @@ if (blogGrid) {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/blogs"
+                    "https://radhekrishnaclinic.onrender.com/api/blogs"
                 );
 
 
@@ -728,7 +728,7 @@ if (homeBlogGrid) {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/blogs"
+                    "https://radhekrishnaclinic.onrender.com/api/blogs"
                 );
 
 
